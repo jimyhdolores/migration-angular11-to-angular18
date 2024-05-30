@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { IRegister } from './../../models/auth';
 import { customValidator, MODEL_REGISTER_ERRORS } from './model-message-error';
 
@@ -10,7 +10,7 @@ import { customValidator, MODEL_REGISTER_ERRORS } from './model-message-error';
 })
 export class RegisterComponent {
 	registerUser: IRegister = <IRegister>{};
-	myRegisterForm: FormGroup | undefined;
+	myRegisterForm: UntypedFormGroup | undefined;
 
 	constructor() {
 		this._loadBuilder();
@@ -25,14 +25,14 @@ export class RegisterComponent {
 	}
 
 	private _loadBuilder(): void {
-		this.myRegisterForm = new FormGroup({
-			username: new FormControl('', [
+		this.myRegisterForm = new UntypedFormGroup({
+			username: new UntypedFormControl('', [
 				Validators.required,
 				Validators.minLength(5),
 				customValidator()
 			]),
-			password: new FormControl('', [Validators.required]),
-			repeatPassword: new FormControl('')
+			password: new UntypedFormControl('', [Validators.required]),
+			repeatPassword: new UntypedFormControl('')
 		});
 		this.myRegisterForm.get('')?.valid;
 	}
