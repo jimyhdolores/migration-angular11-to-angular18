@@ -8,4 +8,4 @@ import { RegisterComponent } from '../../../commons/components/register/register
 	templateUrl: './register-page.component.html',
 	styleUrls: ['./register-page.component.scss']
 })
-export class RegisterPageComponent {}
+export default class RegisterPageComponent {}

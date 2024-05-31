@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
-import {
-	ActivatedRouteSnapshot,
-	CanDeactivate,
-	RouterStateSnapshot,
-	UrlTree
-} from '@angular/router';
+import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { MedabotsComponent } from 'src/app/pages/dashboard/medabots/medabots.component';
+import MedabotsComponent from '../../pages/dashboard/medabots/medabots.component';
 import { IDeactiveComponent } from './../models/animes';
 
 @Injectable({
