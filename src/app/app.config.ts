@@ -1,6 +1,6 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/legacy-snack-bar';
 import { ApplicationConfig } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
