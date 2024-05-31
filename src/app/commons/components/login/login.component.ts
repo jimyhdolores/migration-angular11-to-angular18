@@ -1,22 +1,22 @@
+import { JsonPipe, NgIf } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BasicFormModule } from '../../module/basic-form.module';
 import { AuthService } from '../../services/auth.service';
 import { JwtAuthService } from '../../services/jwt-auth.service';
 import { IRQLogin } from './../../models/auth';
 
 @Component({
+	standalone: true,
+	imports: [BasicFormModule, JsonPipe, NgIf],
 	selector: 'app-login',
 	templateUrl: './login.component.html',
 	styleUrls: ['../../scss/auth.component.scss']
 })
 export class LoginComponent {
 	@ViewChild('myFormLogin') myFormLogin: NgForm | undefined;
-	constructor(
-		private _router: Router,
-		private _loginService: AuthService,
-		private _jwtAuthService: JwtAuthService
-	) {}
+	constructor(private _router: Router, private _loginService: AuthService, private _jwtAuthService: JwtAuthService) {}
 
 	dataLoginForm = {
 		userName: 'maria',

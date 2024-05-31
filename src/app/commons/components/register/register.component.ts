@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { AbstractControl, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { BasicFormModule } from '../../module/basic-form.module';
 import { IRegister } from './../../models/auth';
-import { customValidator, MODEL_REGISTER_ERRORS } from './model-message-error';
+import { MODEL_REGISTER_ERRORS, customValidator } from './model-message-error';
 
 @Component({
+	standalone: true,
+	imports: [BasicFormModule],
 	selector: 'app-register',
 	templateUrl: './register.component.html',
 	styleUrls: ['../../scss/auth.component.scss']
@@ -26,11 +29,7 @@ export class RegisterComponent {
 
 	private _loadBuilder(): void {
 		this.myRegisterForm = new UntypedFormGroup({
-			username: new UntypedFormControl('', [
-				Validators.required,
-				Validators.minLength(5),
-				customValidator()
-			]),
+			username: new UntypedFormControl('', [Validators.required, Validators.minLength(5), customValidator()]),
 			password: new UntypedFormControl('', [Validators.required]),
 			repeatPassword: new UntypedFormControl('')
 		});
@@ -41,9 +40,7 @@ export class RegisterComponent {
 		const control = this.myRegisterForm?.get(controlName);
 		if (control?.invalid && control?.touched) {
 			const atributeError = MODEL_REGISTER_ERRORS.find((x) => x.formControlName == controlName);
-			const validator = atributeError?.validators.find(
-				(validator) => control.errors![validator.name]
-			);
+			const validator = atributeError?.validators.find((validator) => control.errors![validator.name]);
 			return validator!.message;
 		}
 		// if (control?.invalid && control?.hasError('required')) {
