@@ -1,8 +1,10 @@
 import { NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialog } from '@angular/material/dialog';
 import { IAnime } from '../../models/animes';
+import { ModalAnimeComponent } from '../modal-anime/modal-anime.component';
 
 @Component({
 	standalone: true,
@@ -14,11 +16,11 @@ import { IAnime } from '../../models/animes';
 export class AnimeComponent {
 	@Input() anime = <IAnime>{};
 
-	// constructor(public dialog: MatDialog) {}
+	public readonly _DIALOG = inject(MatDialog);
 
 	clickEvolutions(): void {
-		// this.dialog.open(ModalAnimeComponent, {
-		// 	data: this.anime.evolutions
-		// });
+		this._DIALOG.open(ModalAnimeComponent, {
+			data: this.anime.evolutions
+		});
 	}
 }

@@ -3,7 +3,7 @@ import { AnimeGuardGuardCanDeactive } from '../commons/guards/anime-guard-candea
 import { AnimeGuardGuardChild } from '../commons/guards/anime-guard-child.guard';
 import { AnimeGuardGuard } from '../commons/guards/anime-guard.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { PokemonsComponent } from './dashboard/pokemons/pokemons.component';
+import PokemonsComponent from './dashboard/pokemons/pokemons.component';
 
 export default [
 	{

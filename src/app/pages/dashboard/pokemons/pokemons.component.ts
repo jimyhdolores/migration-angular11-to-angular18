@@ -13,7 +13,7 @@ import { AnimesService } from './../../../commons/services/animes.service';
 	styleUrls: ['./pokemons.component.scss'],
 	providers: [AnimesService]
 })
-export class PokemonsComponent implements OnInit, OnDestroy {
+export default class PokemonsComponent implements OnInit, OnDestroy {
 	private readonly _animesService = inject(AnimesService);
 
 	private _subscriptionAnime: Subscription | undefined;
