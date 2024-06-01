@@ -1,18 +1,12 @@
 import { Injectable } from '@angular/core';
-import {
-	ActivatedRouteSnapshot,
-	CanActivate,
-	Router,
-	RouterStateSnapshot,
-	UrlTree
-} from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { JwtAuthService } from '../services/jwt-auth.service';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class AnimeGuardGuard implements CanActivate {
+export class AnimeGuardGuard  {
 	constructor(private _jwtAuthService: JwtAuthService, private _router: Router) {}
 	canActivate(
 		route: ActivatedRouteSnapshot,

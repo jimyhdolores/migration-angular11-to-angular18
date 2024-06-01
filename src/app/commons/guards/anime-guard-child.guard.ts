@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-	ActivatedRouteSnapshot,
-	CanActivateChild,
-	RouterStateSnapshot,
-	UrlTree
-} from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { JwtAuthService } from '../services/jwt-auth.service';
 import { MessageService } from './../services/message.service';
@@ -12,7 +7,7 @@ import { MessageService } from './../services/message.service';
 @Injectable({
 	providedIn: 'root'
 })
-export class AnimeGuardGuardChild implements CanActivateChild {
+export class AnimeGuardGuardChild  {
 	constructor(private _jwtAuthService: JwtAuthService, private _messageService: MessageService) {}
 	canActivateChild(
 		childRoute: ActivatedRouteSnapshot,

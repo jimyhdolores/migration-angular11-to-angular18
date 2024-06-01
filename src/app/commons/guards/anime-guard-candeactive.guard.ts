@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import MedabotsComponent from '../../pages/dashboard/medabots/medabots.component';
 import { IDeactiveComponent } from './../models/animes';
@@ -7,7 +7,7 @@ import { IDeactiveComponent } from './../models/animes';
 @Injectable({
 	providedIn: 'root'
 })
-export class AnimeGuardGuardCanDeactive implements CanDeactivate<MedabotsComponent> {
+export class AnimeGuardGuardCanDeactive  {
 	canDeactivate(
 		component: IDeactiveComponent,
 		currentRoute: ActivatedRouteSnapshot,
