@@ -14,9 +14,9 @@
 				#uservalid="ngModel"
 			/>
 			<mat-icon class="material-icons-outlined" matSuffix>account_circle_outline</mat-icon>
-			<mat-error *ngIf="uservalid.invalid && uservalid.errors?.required">
-				El usuario es requerido
-			</mat-error>
+			@if (uservalid.invalid && uservalid.errors?.required) {
+			<mat-error> El usuario es requerido </mat-error>
+			}
 		</mat-form-field>
 		<mat-form-field appearance="outline">
 			<mat-label>Password</mat-label>
@@ -30,9 +30,9 @@
 				#userPassword="ngModel"
 			/>
 			<mat-icon matSuffix>password</mat-icon>
-			<mat-error *ngIf="userPassword.invalid && userPassword.errors?.required">
-				La contraseña es requerida
-			</mat-error>
+			@if (userPassword.invalid && userPassword.errors?.required) {
+			<mat-error> La contraseña es requerida </mat-error>
+			}
 		</mat-form-field>
 
 		<button

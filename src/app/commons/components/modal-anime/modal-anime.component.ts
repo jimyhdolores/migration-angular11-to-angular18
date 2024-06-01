@@ -1,12 +1,18 @@
-import { NgFor } from '@angular/common';
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { MatButton } from '@angular/material/button';
+import {
+	MAT_DIALOG_DATA,
+	MatDialogActions,
+	MatDialogClose,
+	MatDialogContent,
+	MatDialogTitle
+} from '@angular/material/dialog';
 import { IAnime } from '../../models/animes';
-import { AnimeComponent } from '../anime/anime.component';
+import { AnimeDialogComponent } from '../anime-dialog/anime-dialog.component';
 
 @Component({
 	standalone: true,
-	imports: [MatDialogModule, AnimeComponent, NgFor],
+	imports: [MatDialogTitle, MatDialogContent, MatDialogClose, MatDialogActions, AnimeDialogComponent, MatButton],
 	selector: 'app-modal-anime',
 	templateUrl: './modal-anime.component.html',
 	styleUrls: ['./modal-anime.component.scss']

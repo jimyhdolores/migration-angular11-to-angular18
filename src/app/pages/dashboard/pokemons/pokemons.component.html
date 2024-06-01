@@ -1,4 +1,7 @@
 <h1>Pokemons</h1>
 <div class="container">
-	<app-anime *ngFor="let item of listPokemons" [anime]="item"> </app-anime>
+	@for (item of listPokemons; track $index) {
+	<app-anime-dialog [anime]="item"> </app-anime-dialog>
+	}
+	<!-- <app-anime-dialog *ngFor="let item of listPokemons" [anime]="item"> </app-anime-dialog> -->
 </div>

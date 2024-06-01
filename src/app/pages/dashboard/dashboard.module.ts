@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,16 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
 	declarations: [HeaderComponent, MenuComponent],
-	imports: [
-		RouterLink,
-		MatToolbarModule,
-		MatIconModule,
-		MatButtonModule,
-		MatListModule,
-		NgFor,
-		RouterLinkActive,
-		RouterLink
-	],
+	imports: [RouterLink, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, RouterLinkActive, RouterLink],
 	exports: [HeaderComponent, MenuComponent, MatSidenavModule]
 })
 export class DashboardModule {}

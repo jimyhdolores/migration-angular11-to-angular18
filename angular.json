@@ -18,15 +18,18 @@
 			"prefix": "app",
 			"architect": {
 				"build": {
-					"builder": "@angular-devkit/build-angular:browser",
+					"builder": "@angular-devkit/build-angular:application",
 					"options": {
 						"outputPath": "dist/migration-angular11-to-angular18",
 						"index": "src/index.html",
-						"main": "src/main.ts",
-						"polyfills": "src/polyfills.ts",
+						"browser": "src/main.ts",
+						"polyfills": ["zone.js"],
 						"tsConfig": "tsconfig.app.json",
 						"assets": ["src/favicon.ico", "src/assets"],
-						"styles": ["./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css", "src/styles.scss"],
+						"styles": [
+							"./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+							"src/styles.scss"
+						],
 						"scripts": []
 					},
 					"configurations": {
@@ -52,46 +55,46 @@
 							"outputHashing": "all"
 						},
 						"development": {
-							"buildOptimizer": false,
 							"optimization": false,
-							"vendorChunk": true,
 							"extractLicenses": false,
-							"sourceMap": true,
-							"namedChunks": true
+							"sourceMap": true
 						}
 					},
 					"defaultConfiguration": "production"
 				},
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "buildTarget": "migration-angular11-to-angular18:build"
+					"options": {
+						"buildTarget": "migration-angular11-to-angular18:build"
 					},
 					"configurations": {
-            "production": {
-              "buildTarget": "migration-angular11-to-angular18:build:production"
+						"production": {
+							"buildTarget": "migration-angular11-to-angular18:build:production"
 						},
-            "development": {
-              "buildTarget": "migration-angular11-to-angular18:build:development"
+						"development": {
+							"buildTarget": "migration-angular11-to-angular18:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "buildTarget": "migration-angular11-to-angular18:build"
+					"options": {
+						"buildTarget": "migration-angular11-to-angular18:build"
 					}
 				},
 				"test": {
 					"builder": "@angular-devkit/build-angular:karma",
 					"options": {
 						"main": "src/test.ts",
-						"polyfills": "src/polyfills.ts",
+						"polyfills": ["zone.js", "zone.js/testing"],
 						"tsConfig": "tsconfig.spec.json",
 						"karmaConfig": "karma.conf.js",
 						"assets": ["src/favicon.ico", "src/assets"],
-						"styles": ["./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css", "src/styles.scss"],
+						"styles": [
+							"./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+							"src/styles.scss"
+						],
 						"scripts": []
 					}
 				},
