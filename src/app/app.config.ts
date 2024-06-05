@@ -1,5 +1,5 @@
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
@@ -9,6 +9,8 @@ export const CONFIG: ApplicationConfig = {
 	providers: [
 		provideAnimations(),
 		provideRouter(APP_ROUTES),
-		provideHttpClient(withInterceptors([AnimeInterceptorFn]))
+		provideHttpClient(withInterceptors([AnimeInterceptorFn])),
+		// provideZoneChangeDetection({ eventCoalescing: true }),
+		provideExperimentalZonelessChangeDetection()
 	]
 };
