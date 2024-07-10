@@ -3,12 +3,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IRLogin, IRQLogin } from './../models/auth';
 import { PathRest } from './../static/path-rest';
+import { MessageService } from './message.service';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AuthService {
-	constructor(private http: HttpClient) {}
+	constructor(
+		private http: HttpClient,
+		private messageService: MessageService
+	) {}
 	//CHIKIS EN EL VIDEO POR ERROR PUSE EL MISMO MODELO DE DATOS COMO "RESPUESTA" PERO DEBERIA SER "IRLogin", MIL DISCULPAS
 	login(login: IRQLogin): Observable<IRLogin> {
 		return this.http.post<IRLogin>(PathRest.GET_LOGIN, login);
