@@ -14,7 +14,7 @@ import { ModalAnimeComponent } from '../modal-anime/modal-anime.component';
 	styleUrls: ['./anime.component.scss']
 })
 export class AnimeComponent {
-	@Input() anime = <IAnime>{};
+	@Input() anime = {} as IAnime;
 	public readonly _DIALOG = inject(MatDialog);
 
 	clickEvolutions(): void {

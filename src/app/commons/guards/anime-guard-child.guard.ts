@@ -26,16 +26,19 @@
 // }
 
 import { inject } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivateChildFn, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivateChildFn } from '@angular/router';
 import { JwtAuthService } from '../services/jwt-auth.service';
 import { MessageService } from '../services/message.service';
 
-export const AnimeGuardGuardChild: CanActivateChildFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+export const AnimeGuardGuardChild: CanActivateChildFn = (route: ActivatedRouteSnapshot) => {
 	const path = route.routeConfig?.path;
 	const _jwtAuthService = inject(JwtAuthService);
 	const _messageService = inject(MessageService);
 	if (path === 'medabots' && !_jwtAuthService.isAdmin()) {
-		_messageService.showError('No cuenta con permisos suficientes para poder ingresar', 'top right');
+		_messageService.showError(
+			'No cuenta con permisos suficientes para poder ingresar',
+			'top right'
+		);
 		return false;
 	}
 	return true;

@@ -1,10 +1,10 @@
 <div class="menu">
 	<mat-nav-list>
 		@for (menu of listMenu; track $index) {
-		<mat-list-item routerLinkActive="active" [routerLink]="menu.path" isActive>
-			<mat-icon matListIcon>{{ menu.icon }}</mat-icon>
-			<a routerLinkActive="router-link-active"> {{ menu.name }}</a>
-		</mat-list-item>
+			<mat-list-item routerLinkActive="active" [routerLink]="menu.path" isActive>
+				<mat-icon matListIcon>{{ menu.icon }}</mat-icon>
+				<a routerLinkActive="router-link-active"> {{ menu.name }}</a>
+			</mat-list-item>
 		}
 
 		<mat-list-item role="listitem" (click)="logout()">

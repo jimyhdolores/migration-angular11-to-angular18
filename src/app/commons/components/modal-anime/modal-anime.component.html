@@ -1,10 +1,9 @@
 <h1 mat-dialog-title>Evolutions</h1>
 <div mat-dialog-content>
 	<div class="container">
-
-    @for (item of listPokemons; track $index) {
-      <app-anime-dialog [anime]="item"/>
-    }
+		@for (item of listPokemons; track $index) {
+			<app-anime-dialog [anime]="item" />
+		}
 	</div>
 </div>
 <div mat-dialog-actions>

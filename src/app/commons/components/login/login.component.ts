@@ -1,7 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLinkActive } from '@angular/router';
 import { BasicFormModule } from '../../module/basic-form.module';
 import { AuthService } from '../../services/auth.service';
 import { JwtAuthService } from '../../services/jwt-auth.service';
@@ -9,7 +9,7 @@ import { IRQLogin } from './../../models/auth';
 
 @Component({
 	standalone: true,
-	imports: [BasicFormModule, JsonPipe],
+	imports: [BasicFormModule, JsonPipe, RouterLinkActive],
 	selector: 'app-login',
 	templateUrl: './login.component.html',
 	styleUrls: ['../../scss/auth.component.scss']

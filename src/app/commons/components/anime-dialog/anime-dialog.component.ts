@@ -13,6 +13,6 @@ import { IAnime } from '../../models/animes';
 	styleUrls: ['./anime-dialog.component.scss']
 })
 export class AnimeDialogComponent {
-	@Input() anime = <IAnime>{};
+	@Input() anime = {} as IAnime;
 	public readonly _DIALOG = inject(MatDialog);
 }

@@ -10,7 +10,15 @@ import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
 	declarations: [HeaderComponent, MenuComponent],
-	imports: [RouterLink, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, RouterLinkActive, RouterLink],
+	imports: [
+		RouterLink,
+		MatToolbarModule,
+		MatIconModule,
+		MatButtonModule,
+		MatListModule,
+		RouterLinkActive,
+		RouterLink
+	],
 	exports: [HeaderComponent, MenuComponent, MatSidenavModule]
 })
 export class DashboardModule {}

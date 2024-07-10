@@ -15,7 +15,7 @@
 			/>
 			<mat-icon class="material-icons-outlined" matSuffix>account_circle_outline</mat-icon>
 			@if (uservalid.invalid && uservalid.errors?.required) {
-			<mat-error> El usuario es requerido </mat-error>
+				<mat-error> El usuario es requerido </mat-error>
 			}
 		</mat-form-field>
 		<mat-form-field appearance="outline">
@@ -31,7 +31,7 @@
 			/>
 			<mat-icon matSuffix>password</mat-icon>
 			@if (userPassword.invalid && userPassword.errors?.required) {
-			<mat-error> La contraseña es requerida </mat-error>
+				<mat-error> La contraseña es requerida </mat-error>
 			}
 		</mat-form-field>
 
@@ -43,11 +43,7 @@
 		>
 			Login
 		</button>
-		<label
-			routerLinkActive="router-link-active"
-			class="registrate"
-			routerLinkActive="router-link-active"
-			(click)="onClickRegister()"
+		<label class="registrate" routerLinkActive="router-link-active" (click)="onClickRegister()"
 			>Register</label
 		>
 	</form>

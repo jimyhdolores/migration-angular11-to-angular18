@@ -21,6 +21,8 @@
 import { CanDeactivateFn } from '@angular/router';
 import { IDeactiveComponent } from '../models/animes';
 
-export const AnimeGuardGuardCanDeactive: CanDeactivateFn<IDeactiveComponent> = (component: IDeactiveComponent) => {
+export const AnimeGuardGuardCanDeactive: CanDeactivateFn<IDeactiveComponent> = (
+	component: IDeactiveComponent
+) => {
 	return component.canExit();
 };

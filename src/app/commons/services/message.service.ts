@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { TypeSnackBarPosition, TypeSnackBarPositionHorizontal, TypeSnackBarPositionVertical } from './../models/types';
+import {
+	TypeSnackBarPosition,
+	TypeSnackBarPositionHorizontal,
+	TypeSnackBarPositionVertical
+} from './../models/types';
 
 interface IPosition {
 	horizontalPosition: TypeSnackBarPositionHorizontal;
@@ -29,7 +33,12 @@ export class MessageService {
 		this.showSnackBar(message, position, this.SNACKBAR_TYPE_ERROR, duration);
 	}
 
-	private showSnackBar(message: string, position: TypeSnackBarPosition, type: number, duration?: number) {
+	private showSnackBar(
+		message: string,
+		position: TypeSnackBarPosition,
+		type: number,
+		duration?: number
+	) {
 		if (!duration) duration = 3000;
 
 		const positionSnack = this.getPosition(position);

@@ -17,7 +17,7 @@ export class JwtAuthService {
 		if (!lsRol) {
 			return false;
 		}
-		const rolArray = JSON.parse(lsRol) as Array<string>;
+		const rolArray = JSON.parse(lsRol) as string[];
 		if (rolArray.length == 0) {
 			return false;
 		}
@@ -27,7 +27,7 @@ export class JwtAuthService {
 
 	isAdmin(): boolean {
 		const lsRol = localStorage.getItem(LocalStorageJwt.LS_ROLES)!;
-		const rolArray = JSON.parse(lsRol) as Array<string>;
+		const rolArray = JSON.parse(lsRol) as string[];
 		const rolAdmin = rolArray.find((x) => x === 'ADMIN');
 
 		return rolAdmin !== undefined;

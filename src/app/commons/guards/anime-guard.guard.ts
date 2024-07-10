@@ -22,10 +22,10 @@
 // }
 
 import { inject } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 import { JwtAuthService } from '../services/jwt-auth.service';
 
-export const AnimeGuardGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+export const AnimeGuardGuard: CanActivateFn = () => {
 	console.log('**CanActivate*');
 	const _jwtAuthService = inject(JwtAuthService);
 	const _router = inject(Router);

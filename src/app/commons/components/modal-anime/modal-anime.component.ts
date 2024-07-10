@@ -12,7 +12,14 @@ import { AnimeDialogComponent } from '../anime-dialog/anime-dialog.component';
 
 @Component({
 	standalone: true,
-	imports: [MatDialogTitle, MatDialogContent, MatDialogClose, MatDialogActions, AnimeDialogComponent, MatButton],
+	imports: [
+		MatDialogTitle,
+		MatDialogContent,
+		MatDialogClose,
+		MatDialogActions,
+		AnimeDialogComponent,
+		MatButton
+	],
 	selector: 'app-modal-anime',
 	templateUrl: './modal-anime.component.html',
 	styleUrls: ['./modal-anime.component.scss']

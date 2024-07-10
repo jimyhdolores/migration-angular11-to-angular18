@@ -75,7 +75,10 @@ const isLogin = (url: string): boolean => {
 	return url.search(PathRest.GET_LOGIN) != -1;
 };
 
-const herrorHandler = (error: HttpErrorResponse, messageService: MessageService): Observable<never> => {
+const herrorHandler = (
+	error: HttpErrorResponse,
+	messageService: MessageService
+): Observable<never> => {
 	// const messageService = inject(MessageService);
 
 	if (error instanceof HttpErrorResponse) {
